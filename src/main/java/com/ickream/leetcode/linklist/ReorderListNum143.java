@@ -35,6 +35,7 @@ public class ReorderListNum143 {
         }
         next.next=null;
     }
+
     public ListNode getListNode(int [] arr){
         ListNode head=new ListNode(arr[0]);
         ListNode next=head;
