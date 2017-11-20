@@ -1,8 +1,5 @@
 package com.ickream.leetcode.linklist;
 
-
-import com.sun.xml.internal.bind.v2.runtime.reflect.Lister;
-
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -12,6 +9,11 @@ import java.util.List;
  * Created by xf on 2017/11/17.
  */
 public class ReorderListNum143 {
+    /**
+     * 方法一 将链表插入到一个LinkedList列表中，然后交替将列表首尾相连
+     * 这个方法不好因为借助一个LinkedList列表才实现功能
+     * @param head
+     */
     public void reorderList(ListNode head) {
         if(head==null){
             return ;
@@ -34,6 +36,37 @@ public class ReorderListNum143 {
             next=next.next;
         }
         next.next=null;
+    }
+
+    /**
+     * 方法二 每次得到尾节点的前一个节点，然后将尾节点插入到first节点后面，将first节点的next节点插入到尾节点后，将next节点设为first节点
+     *
+     * @param head
+     */
+    public void recordList2(ListNode head){
+        if(head==null||head.next==null||head.next.next==null){
+            return ;
+        }
+        ListNode first=head;
+        ListNode beforeLast =getBeforeLastNode(head);
+        while(first!=beforeLast){
+            beforeLast.next.next=first.next;
+            first.next=beforeLast.next;
+            beforeLast.next=null;
+            first=first.next.next;
+            beforeLast=getBeforeLastNode(first);
+        }
+
+    }
+    private ListNode getBeforeLastNode(ListNode head){
+        ListNode next=head;
+        if(next.next==null){
+            return next;
+        }
+        while(next.next.next!=null){
+            next=next.next;
+        }
+        return next;
     }
 
     public ListNode getListNode(int [] arr){

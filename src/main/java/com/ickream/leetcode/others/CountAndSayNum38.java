@@ -11,7 +11,6 @@ public class CountAndSayNum38 {
         for(int i=1;i<n;i++){
             String str="";
             int count=1;
-            char say=endStr.charAt(0);
             for(int j=1;j<endStr.length();j++){
                 if(endStr.charAt(j)== endStr.charAt(j-1)){
                     count++;
