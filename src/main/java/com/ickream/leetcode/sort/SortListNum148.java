@@ -5,7 +5,6 @@ import java.util.List;
 
 import com.ickream.leetcode.GenerateLinkList;
 import com.ickream.leetcode.ListNode;
-import sun.security.action.GetBooleanAction;
 
 /**
  * Created by xf on 2017/11/17.

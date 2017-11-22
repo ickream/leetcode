@@ -43,22 +43,22 @@ public class ReorderListNum143 {
      *
      * @param head
      */
-    public void recordList2(ListNode head){
+    public void reorderList2(ListNode head){
         if(head==null||head.next==null||head.next.next==null){
             return ;
         }
         ListNode first=head;
-        ListNode beforeLast =getBeforeLastNode(head);
-        while(first!=beforeLast){
-            beforeLast.next.next=first.next;
-            first.next=beforeLast.next;
-            beforeLast.next=null;
+        ListNode preLast =getPreLastNode(head);
+        while(first!=preLast){
+            preLast.next.next=first.next;
+            first.next=preLast.next;
+            preLast.next=null;
             first=first.next.next;
-            beforeLast=getBeforeLastNode(first);
+            preLast=getPreLastNode(first);
         }
 
     }
-    private ListNode getBeforeLastNode(ListNode head){
+    private ListNode getPreLastNode(ListNode head){
         ListNode next=head;
         if(next.next==null){
             return next;
@@ -67,6 +67,69 @@ public class ReorderListNum143 {
             next=next.next;
         }
         return next;
+    }
+
+    /**
+     * 最好的方法 快慢指针找到中间节点 然后反转后半部分 然后插入
+     * @param head
+     */
+    public void reorderList3(ListNode head){
+        if(head==null||head.next==null||head.next.next==null){
+            return ;
+        }
+        ListNode preMidNode=head;
+        ListNode fast=head;
+        ListNode slow=head;
+        while(fast!=null&&fast.next!=null){  //快慢指针
+            preMidNode=slow;
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+
+        ListNode cur=preMidNode.next;         //反转链表
+        while(cur!=null&&cur.next!=null){
+            ListNode tmp=cur.next;
+            cur.next=tmp.next;
+            tmp.next=preMidNode.next;
+            preMidNode.next=tmp;
+        }
+
+        cur=head;
+        ListNode midNext=preMidNode.next;
+        preMidNode.next=null;
+        while(true){
+            if(cur.next==null){
+                cur.next=midNext;
+                break;
+            }
+            ListNode tmp=midNext.next;
+            midNext.next=cur.next;
+            cur.next=midNext;
+            midNext=tmp;
+            cur=cur.next.next;
+        }
+    }
+    private ListNode getPreMidNode(ListNode head){
+        ListNode preMidNode=head;
+        ListNode fast=head;
+        ListNode slow=head;
+        while(fast!=null&&fast.next!=null){
+            preMidNode=slow;
+            slow=slow.next;
+            fast=fast.next.next;
+        }
+        return preMidNode;
+    }
+    private ListNode reverseListNode(ListNode head){
+        ListNode newHead=new ListNode(0);
+        ListNode next;
+        while(head!=null){
+            next=head.next;
+            head.next=newHead.next;
+            newHead.next=head;
+            head=next;
+        }
+        return newHead.next;
     }
 
     public ListNode getListNode(int [] arr){
