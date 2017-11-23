@@ -34,7 +34,8 @@ public class AQuickSort {
         arr[j]=tmp;
     }
     public static void main(String [] args){
-        int[] arr=new int []{3,1,2,3,4,5};
+        //TODO nothing
+        int[] arr=new int []{3,2,1};
         sort(arr, 0, arr.length-1);
         System.out.println(Arrays.toString(arr));
     }
