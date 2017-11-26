@@ -4,6 +4,7 @@ import java.util.Arrays;
 
 /**
  * Created by xf on 2017/11/23.
+ * 移动两个数字使得num值最大
  */
 public class MaximumSwapNum670 {
     public int maximumSwap(int num) {

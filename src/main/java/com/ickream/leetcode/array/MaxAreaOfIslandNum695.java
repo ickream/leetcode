@@ -3,6 +3,7 @@ package com.ickream.leetcode.array;
 
 /**
  * Created by xf on 2017/11/25.
+ * 搜索
  */
 public class MaxAreaOfIslandNum695 {
     public int maxAreaOfIsland(int[][] grid) {

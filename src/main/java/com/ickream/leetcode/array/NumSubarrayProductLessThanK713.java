@@ -5,6 +5,7 @@ import java.util.Arrays;
 /**
  * Created by xf on 2017/11/25.
  * 双指针算法
+ * 求乘积小于k的连续子数组的个数
  */
 public class NumSubarrayProductLessThanK713 {
     public static  int numSubarrayProductLessThanK(int[] nums, int k) {

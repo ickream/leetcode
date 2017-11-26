@@ -48,6 +48,12 @@ public class LevelOrderNum102 {             //一
         return integers;
     }
 
+    /**
+     * 递归算法
+     * @param root
+     * @return
+     */
+
     public List<List<Integer>> levelOrder2(TreeNode root){
         List<List<Integer>> result=new ArrayList<>();
         if(root==null){

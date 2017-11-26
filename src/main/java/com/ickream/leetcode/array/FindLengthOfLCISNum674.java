@@ -2,6 +2,7 @@ package com.ickream.leetcode.array;
 
 /**
  * Created by xf on 2017/11/23.
+ * 最长连续递增子数组
  */
 public class FindLengthOfLCISNum674 {
     public static int findLengthOfLCIS(int[] nums) {
