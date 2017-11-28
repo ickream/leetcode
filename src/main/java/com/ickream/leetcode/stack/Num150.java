@@ -12,8 +12,10 @@ public class Num150 {
             if(!isOperator(tokens[i])){
                 num.push(tokens[i]);
             }else{
-                int a=getInt(num.pop());
-                int b=getInt(num.pop());
+//                int a=getInt(num.pop());
+//                int b=getInt(num.pop());
+                int a= Integer.parseInt(num.pop());
+                int b = Integer.parseInt(num.pop());
                 if(tokens[i].equals("+")){
                     num.push((a+b)+"");
                 }else if(tokens[i].equals("-")){
@@ -25,7 +27,7 @@ public class Num150 {
                 }
             }
         }
-        return getInt(num.pop());//num.size(); //
+        return Integer.parseInt(num.pop());//num.size(); //
     }
     public int getInt(String str){
         int n=0;

@@ -31,4 +31,57 @@ public class FourSumNum18 {
     /**
      * 双指针
      */
+    public List<List<Integer>> fourSum2(int[] nums, int target){
+        Arrays.sort(nums);
+        List<List<Integer>> result= new ArrayList<>();
+        if(nums.length < 4){
+            return result;
+        }
+        for(int i=0;i<nums.length-3;i++){
+            //在网上看到的优化方法，，，不加也没问题
+            if(nums[i]+nums[i+1]+nums[i+2]+nums[i+3]>target){
+                continue; //first candidate too large, search finished
+            }
+            if(nums[i]+nums[nums.length-1]+nums[nums.length-2]+nums[nums.length-3]<target){
+                continue; //first candidate too small
+            }
+
+            if(i!=0&&nums[i]==nums[i-1]){       //去重复
+                continue;
+            }
+            threeSum(nums, result, i, target);
+        }
+
+        return result;
+    }
+    private void threeSum(int[] nums, List<List<Integer>> result, int start, int target){
+        for (int i = start+1; i < nums.length - 2; i++) {
+
+            if(nums[start]+nums[i]+nums[i+1]+nums[i+2]>target){   //优化
+                break; //second candidate too large
+            }
+            if(nums[start]+nums[i]+nums[nums.length-1]+nums[nums.length-2]<target){
+                continue; //second candidate too small
+            }
+
+            if(i!=start+1&&nums[i-1]==nums[i]){          //去重验证
+                continue;
+            }
+            int lo=i+1,hi=nums.length-1,sum=target-nums[start]-nums[i];
+            while(lo<hi){
+                if((lo>i+1&&nums[lo-1]==nums[lo])||nums[lo]+nums[hi]<sum){  //这里也有去重验证
+                    lo++;
+                    continue;
+                }
+                if(nums[lo]+nums[hi]>sum){                    //第三个数不用验证
+                    hi--;
+                    continue;
+                }
+                result.add(Arrays.asList(nums[start],nums[i],nums[lo],nums[hi]));
+                lo++;
+                hi--;
+            }
+        }
+    }
+
 }
