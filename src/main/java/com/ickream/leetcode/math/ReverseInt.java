@@ -16,7 +16,7 @@ public class ReverseInt {
                 return 0;
             }
         }
-        return (int)(num>0?num:-num);
+        return (int)(x>0?num:-num);
     }
     public static void main(String [] args){
         reverse(1534236469);
