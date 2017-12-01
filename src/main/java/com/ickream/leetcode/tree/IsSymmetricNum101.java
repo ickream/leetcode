@@ -59,7 +59,7 @@ public class IsSymmetricNum101 {         //方法一 根据中序遍历和前序
         return root==null||isSymmetric(root.left, root.right);
 
     }
-    public boolean isSymmetric(TreeNode left, TreeNode right){
+    private boolean isSymmetric(TreeNode left, TreeNode right){
         if(left==null&&right==null){
             return true;
         }

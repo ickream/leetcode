@@ -34,7 +34,7 @@ public class Num16ThreeSumClosest {                           //双指针法
         return result;
     }
 
-    public int threeSumClosest2(int[] nums, int target) {    //最快的一种方法
+    public int threeSumClosest2(int[] nums, int target) {    //最快的一种方法 、、没看懂
         int result = Integer.MAX_VALUE, n = nums.length;
         if (n > 2){
             // #0-数组排序

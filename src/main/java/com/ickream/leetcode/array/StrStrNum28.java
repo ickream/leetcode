@@ -24,7 +24,7 @@ public class StrStrNum28 {
             if(flag == needle.length()){
                 return i;
             }
-    }
+        }
         return -1;
     }
     public static void main(String [] args){
