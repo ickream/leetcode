@@ -32,7 +32,7 @@ public class Num5LongestPalindrome {
             for(int i=0; i+k<s.length(); i++){
                 int j = i+k;
                 dp[i][j] = s.charAt(i)==s.charAt(j) && dp[i+1][j-1];
-                if(dp[i][j] && end - start<k){
+                if(dp[i][j] && end-start <k){
                     start = i;
                     end = j;
                 }

@@ -4,7 +4,7 @@ package com.ickream.leetcode.math;
  * Created by xf on 2017/11/28.
  */
 public class ReverseInt {
-    public static int reverse(int x) {
+    public static int reverse(int x) {    //其实不用先转成字符串的
         String xstr=(new Integer(x)).toString();
         long num=0;
         for(int i=xstr.length()-1;i>=0;i--){
@@ -20,6 +20,6 @@ public class ReverseInt {
     }
     public static void main(String [] args){
         reverse(1534236469);
-        System.out.println(964632435L*10);
+        System.out.println('3'- '5');
     }
 }

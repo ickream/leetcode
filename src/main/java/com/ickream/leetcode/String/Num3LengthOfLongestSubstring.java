@@ -6,6 +6,8 @@ import java.util.Map;
 
 /**
  * Created by xf on 2017/11/30.
+ * 思路是维护一个子字符串随主字符串遍历，当主字符串出现重复时子串从重复处重新生成
+ * 会超时
  */
 public class Num3LengthOfLongestSubstring {                          //超时
     public static int lengthOfLongestSubstring(String s) {
