@@ -44,7 +44,8 @@ public class Num3LengthOfLongestSubstring {                          //超时
         while(hi < s.length()){
             if(arr[s.charAt(hi)] >= lo){
                 lo = arr[s.charAt(hi)] + 1;
-                arr[s.charAt(hi)] = hi++;
+                arr[s.charAt(hi)] = hi;
+                hi++;
                 continue;
             }
             arr[s.charAt(hi)] = hi;
