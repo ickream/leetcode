@@ -2,6 +2,8 @@ package com.ickream.leetcode.linklist;
 
 /**
  * Created by xf on 2017/12/1.
+ * 去除链表中重复的节点只留下不同的节点
+ * 思路是只取不同点生成一个新的链表
  */
 public class Num82DeleteDuplicates {
     public ListNode deleteDuplicates(ListNode head) {
@@ -30,4 +32,14 @@ public class Num82DeleteDuplicates {
         next.next = count==1 ? curNode : null;
         return dummy.next;
     }
+//    public ListNode deleteDuplicates2(ListNode head) {
+//        if(head == null || head.next == null){
+//            return head;
+//        }
+//        ListNode dummy = new ListNode(0);
+//        dummy.next = head;
+//        ListNode preCur = dummy;
+//        ListNode cur = head;
+//        while(cur)
+//    }
 }

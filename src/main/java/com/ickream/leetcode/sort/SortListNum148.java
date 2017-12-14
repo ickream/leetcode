@@ -7,6 +7,7 @@ import com.ickream.leetcode.GenerateLinkList;
 import com.ickream.leetcode.ListNode;
 
 /**
+ * ***
  * Created by xf on 2017/11/17.
  * Sort a linked list in O(n log n) time using constant space complexity.
  * 在nlog(n)时间复杂度里排序先想到快排和归并排序 然后用归并排序
@@ -24,7 +25,7 @@ public class SortListNum148 {
         return mergeList(newHead,newMidNode);
     }
     private ListNode getMidNode(ListNode head){  //研究下快慢指针//优化了一下
-        ListNode fast=head.next.next;
+        ListNode fast=head.next.next;             //之所以能这样给fast赋值是因为之前验证head.next 不为空
         ListNode slow=head;
         while(fast!=null && fast.next != null){
             slow=slow.next;

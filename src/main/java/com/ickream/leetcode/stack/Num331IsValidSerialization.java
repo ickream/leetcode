@@ -6,6 +6,7 @@ import java.util.Stack;
 /**
  * Created by xf on 2017/12/1.
  *  验证字符串是否是二叉树的前序遍历
+ *  不太明白，，，
  */
 
 public class Num331IsValidSerialization {
@@ -28,7 +29,7 @@ public class Num331IsValidSerialization {
         return stack.size() == 1 && stack.peek().equals("#");
     }
     public static void main(String [] args){
-        isValidSerialization("1,#,#");
+        isValidSerialization("9,3,4,#,#,1,#,#,2,#,6,#,#");
 
     }
 }
